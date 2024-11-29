@@ -1,18 +1,24 @@
 @extends('layouts.app_modern', ['title' => 'Data Pasien - '])
 @section('content')
 <div class="card">
-    <div class="card-header">
-        <h2 class="m-0">Tambah Data Pasien</h2>
-    </div>
+    <h3 class="card-header">
+        Data Pasien
+    </h3>
     <div class="card-body">
         <!-- Tombol Tambah Data -->
         <div class="row mb-3">
+            <div class="col-md-6 d-flex align-items-center">
+                <a href="/pasien/create" class=" d-flex align-items-center btn btn-primary">Tambah Data  <i class="pl-2 ti ti-plus fs-4"></i></a>
+            </div>
             <div class="col-md-6">
-                <a href="/pasien/create" class="btn btn-primary">
-                    Tambah Data
-                </a>
+                <form class="d-flex justify-content-end">
+                    <input type="text" class="form-control me-2" placeholder="Cari data..." aria-label="Search"
+                        name="q" value="{{ request('q') }}">
+                    <button class="btn btn-primary" type="submit">Cari </button>
+                </form>
             </div>
         </div>
+
 
         <!-- Tabel Data Pasien -->
         <div class="table-responsive">
@@ -25,12 +31,12 @@
                         <th style="width: 10%;">Umur</th>
                         <th style="width: 15%;">Jenis Kelamin</th>
                         <th style="width: 20%;">Alamat</th>
-                        <th style="width: 15%;">Tgl Buat</th>
+                        <th style="width: 15%;">Tanggal Buat</th>
                         <th style="width: 15%;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($pasien as $item)
+                    @forelse ($pasien as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->no_pasien }}</td>
@@ -43,7 +49,7 @@
                             <td>{{ $item->umur }}</td>
                             <td>{{ $item->jenis_kelamin }}</td>
                             <td>{{ $item->alamat }}</td>
-                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->created_at->format('d M Y') }}</td>
                             <td>
                                 <div class="d-flex">
                                     <a href="/pasien/{{ $item->id }}/edit" class="btn btn-sm btn-warning me-2">
@@ -59,7 +65,16 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="8" class="text-center text-muted">
+                                <strong>Data tidak ditemukan.</strong>
+                                @if (request()->filled('q'))
+                                    <br>Pencarian: <em>"{{ request('q') }}"</em>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

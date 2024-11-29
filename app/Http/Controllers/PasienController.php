@@ -12,7 +12,12 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $data['pasien'] = \App\Models\Pasien::latest()->paginate(20);
+        if(request()->filled('q')){
+            $data['pasien'] = \App\Models\Pasien::search(request('q'))->paginate(20);
+        }else{
+            $data['pasien'] = \App\Models\Pasien::latest()->paginate(20);
+        }
+
         return view('pasien/pasien_index', $data);
     }
 

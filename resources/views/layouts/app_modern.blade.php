@@ -20,14 +20,15 @@
             <!-- Sidebar scroll-->
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="./index.html" class="text-nowrap logo-img">
-                        <img src="/modern/src/assets/images/logos/dark-logo.svg" width="180" alt="" />
+                    <a href="#" class="logo d-flex align-items-center text-nowrap">
+                        <img src="/modern/src/assets/images/logos/favicon.png" width="35" alt="Logo" class="me-2" />
+                        <span class="fw-bold fs-6">Klinik Permata</span>
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-                        <i class="ti ti-x fs-8"></i>
+                        <i class="ti ti-x fs-5"></i>
                     </div>
                 </div>
-                <!-- Sidebar navigation-->
+                                <!-- Sidebar navigation-->
                 <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">
@@ -35,7 +36,7 @@
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="/home" aria-expanded="false">
+                            <a class="sidebar-link" href="/dashboard" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -48,6 +49,15 @@
                                     <i class="ti ti-users"></i>
                                 </span>
                                 <span class="hide-menu">Pasien</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link"
+                                href="/laporan-pasien/create" aria-expanded="false">
+                                <span>
+                                    <i class="ti">&#xf021</i>
+                                </span>
+                                <span class="hide-menu">Laporan Data Pasien</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -74,24 +84,35 @@
                                 <span class="hide-menu">Pendaftaran</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link"
+                                href="/laporan-daftar/create" aria-expanded="false">
+                                <span>
+                                    <i class="ti">&#xf021</i>
+                                </span>
+                                <span class="hide-menu">Laporan Data Pendaftaran</span>
+                            </a>
+                        </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">AUTH</span>
                         </li>
+                        @if(\Auth::user()->role == 'admin')
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/users" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-login"></i>
+                                    <i class="ti ti-users"></i>
                                 </span>
-                                <span class="hide-menu">Login</span>
+                                <span class="hide-menu">Users</span>
                             </a>
                         </li>
+                        @endif
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/logout" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-user-plus"></i>
+                                    <i class="ti ti-logout"></i>
                                 </span>
-                                <span class="hide-menu">Register</span>
+                                <span class="hide-menu">Logout</span>
                             </a>
                         </li>
                     </ul>
@@ -174,7 +195,9 @@
     <script src="/modern/src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/modern/src/assets/js/sidebarmenu.js"></script>
     <script src="/modern/src/assets/js/app.min.js"></script>
+    <script src="/modern/src/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
     <script src="/modern/src/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="/modern/src/assets/js/dashboard.js"></script>
     <script>
         $(document).ready(function() {
             $('.select2').select2();

@@ -14,7 +14,11 @@ class DaftarController extends Controller
      */
     public function index()
     {
-        $daftar = Daftar::with('pasien')->latest()->paginate(20);
+        if(request()->filled('q')){
+            $daftar = Daftar::search(request('q'))->paginate(20);
+        }else{
+            $daftar = Daftar::with('pasien')->latest()->paginate(20);
+        }
         return view('daftar.daftar_index', compact('daftar'));
     }
 
@@ -55,9 +59,10 @@ class DaftarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Daftar $daftar)
+    public function show($id)
     {
-        //
+        $data['daftar'] = Daftar::findOrFail($id);
+        return view('daftar.daftar_show', $data);
     }
 
     /**
@@ -71,9 +76,18 @@ class DaftarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDaftarRequest $request, Daftar $daftar)
+    public function update(Request $request, $id)
     {
-        //
+        $requestData = $request->validate([
+            'tindakan' => 'required',
+            'diagnosis' => 'required',
+        ]);
+        $daftar = Daftar::findOrFail($id);
+        $daftar->fill($requestData);
+        $daftar->save();
+        flash('Data berhasil disimpan')->success();
+        return back();
+
     }
 
     /**
@@ -81,6 +95,8 @@ class DaftarController extends Controller
      */
     public function destroy(Daftar $daftar)
     {
-        //
+        $daftar->delete();
+        flash('Data berhasil dihapus')->success();
+        return back();
     }
 }

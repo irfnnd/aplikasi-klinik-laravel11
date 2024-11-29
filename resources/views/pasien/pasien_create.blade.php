@@ -1,7 +1,7 @@
 @extends('layouts.app_modern', ['title' => 'Tambah Pasien - '])
 @section('content')
     <div class="card">
-        <h2 class="card-header">Tambah Data Pasien</h2>
+        <h4 class="card-header">Tambah Data Pasien</h4>
         <div class="card-body">
             <form action="/pasien" method="POST" enctype="multipart/form-data">
                 @csrf

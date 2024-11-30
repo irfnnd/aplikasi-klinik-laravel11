@@ -11,6 +11,7 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 Route::middleware([Authenticate::class])->group(function () {
+    Route::resource('/', DashboardController::class);
     Route::resource('dashboard', DashboardController::class);
     Route::resource('pasien', PasienController::class);
     Route::resource('poli', PoliController::class);

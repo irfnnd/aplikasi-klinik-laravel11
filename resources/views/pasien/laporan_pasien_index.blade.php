@@ -53,6 +53,8 @@
 
     <!-- Judul Laporan -->
     <h4 style="text-align: center; margin-bottom: 20px;">Laporan Data Pasien</h4>
+    <p style="color:#000; margin-bottom: 20px;">Tanggal : {{$tanggal ?? '-'}}  s/d  {{$tanggal ?? '-'}}</p>
+
 
     <!-- Tabel Data Pasien -->
     <table class="table">

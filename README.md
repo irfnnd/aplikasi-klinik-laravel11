@@ -13,5 +13,7 @@
 
 ## Instalation
 1. Import project melalui git atau download zip
-2. Jalankan perintah php artisan migrate pada terminal
-3. Login email : admin@mail.com, password: admin123
+2. sesuai kan database pada file .env
+3. Jalankan perintah php artisan migrate pada terminal
+4. jalankan perintah php artisan serve jika folder project tidak berada pada file www/htdocs
+5. Login email : admin@mail.com, password: admin123

@@ -12,12 +12,6 @@
                     <span class="text-danger">{{ $errors->first('nama') }}</span>
                 </div>
                 <div class="form-group mt-1 mb-3">
-                    <label for="biaya">Biaya</label>
-                    <input type="number" class="form-control @error('biaya') is-invalid @enderror" id="biaya"
-                        name="biaya" value="{{ old('biaya') }}">
-                    <span class="text-danger">{{ $errors->first('biaya') }}</span>
-                </div>
-                <div class="form-group mt-1 mb-3">
                     <label for="keterangan">Keterangan</label>
                     <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan"
                         name="keterangan" value="{{ old('keterangan') }}">

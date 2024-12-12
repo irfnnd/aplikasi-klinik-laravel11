@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 12, 2024 at 03:20 AM
+-- Generation Time: Dec 12, 2024 at 12:31 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.13
 
@@ -172,7 +172,8 @@ INSERT INTO `daftars` (`id`, `pasien_id`, `tanggal_daftar`, `poli_id`, `keluhan`
 (103, 108, '2024-11-28', 1, 'Gigi berlubang', NULL, NULL, '2024-11-28 14:58:54', '2024-11-28 14:58:54'),
 (104, 37, '2024-11-28', 1, 'Sakit gigi', NULL, NULL, '2024-11-28 15:30:20', '2024-11-28 15:30:20'),
 (105, 37, '2024-11-28', 3, 'aslk;la', NULL, NULL, '2024-11-28 15:52:11', '2024-11-28 15:52:11'),
-(106, 33, '2024-11-29', 3, 'Vaksin', NULL, NULL, '2024-11-29 00:39:28', '2024-11-29 00:39:28');
+(106, 33, '2024-11-29', 3, 'Vaksin', NULL, NULL, '2024-11-29 00:39:28', '2024-11-29 00:39:28'),
+(107, 108, '2024-12-12', 1, 'Ggi erlubang', 'sakjlksaj', 'jslkas', '2024-12-12 12:20:18', '2024-12-12 12:21:23');
 
 -- --------------------------------------------------------
 
@@ -374,7 +375,8 @@ INSERT INTO `pasiens` (`id`, `no_pasien`, `nama`, `umur`, `jenis_kelamin`, `alam
 (100, '25425', 'Laras Halimah S.Pt', 54, 'Laki-laki', 'Ds. Raya Ujungberung No. 524, Bima 37023, Malut', '2024-11-19 08:00:44', '2024-11-19 08:00:44', NULL),
 (108, '62736', 'M. Irfandi Atarza', 20, 'Laki-laki', 'Padang, Sumatera Barat', '2024-11-19 14:04:26', '2024-11-28 13:31:38', 'uploads/qaIbRVDrLsR5axZikx6VyEuuqPSEHBNk5BEalP8A.jpg'),
 (111, '2309', 'Teuku Hamzah', 20, 'Laki-laki', NULL, '2024-11-28 15:31:21', '2024-11-28 15:31:21', NULL),
-(112, '9219', 'Irfandi', 20, 'Laki-laki', 'Jl. Sudirman', '2024-12-11 09:34:17', '2024-12-11 09:34:17', 'uploads/RUiBMBl78E7fQavX8O4VvAikgUqmEnMJMZBJMVtF.png');
+(112, '9219', 'Irfandi', 20, 'Laki-laki', 'Jl. Sudirman', '2024-12-11 09:34:17', '2024-12-11 09:34:17', 'uploads/RUiBMBl78E7fQavX8O4VvAikgUqmEnMJMZBJMVtF.png'),
+(113, '2929', 'Fandi', 20, 'Laki-laki', 'Padang, Sumatera Bara', '2024-12-12 12:16:46', '2024-12-12 12:16:46', 'uploads/1KTvPPXGbTV53gAG17QO6S7eKN0DIutcaNL3MHcV.jpg');
 
 -- --------------------------------------------------------
 
@@ -404,7 +406,6 @@ INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
 CREATE TABLE `polis` (
   `id` bigint UNSIGNED NOT NULL,
   `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `biaya` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -414,10 +415,10 @@ CREATE TABLE `polis` (
 -- Dumping data for table `polis`
 --
 
-INSERT INTO `polis` (`id`, `nama`, `biaya`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, 'Gigi', '30000', NULL, '2024-11-21 15:26:48', '2024-11-21 15:26:48'),
-(2, 'Mata', '20000', NULL, '2024-11-21 15:29:18', '2024-11-21 15:29:18'),
-(3, 'Anak', '40000', NULL, '2024-11-28 15:31:48', '2024-11-28 15:31:48');
+INSERT INTO `polis` (`id`, `nama`, `keterangan`, `created_at`, `updated_at`) VALUES
+(1, 'Gigi', NULL, '2024-11-21 15:26:48', '2024-11-21 15:26:48'),
+(2, 'Mata', NULL, '2024-11-21 15:29:18', '2024-11-21 15:29:18'),
+(3, 'Anak', NULL, '2024-11-28 15:31:48', '2024-11-28 15:31:48');
 
 -- --------------------------------------------------------
 
@@ -439,11 +440,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('67DFHZGyn1fYiuVXMpk6bv9iEiTvLTVZBD9OmeOl', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSXBZQzdrdGNTSGwzcXZHZmVMYVZlcW12TFpPa3A5S0tNZ3dFVjI4QiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjMzOiJodHRwOi8vYXBsaWthc2kta2xpbmlrLnRlc3QvbG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczMzkwNDY0Nzt9fQ==', 1733904647),
-('9qBT0iIfK5p4Ad9c6K9f2hVNUALfs9Tv3XVIdWTY', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiazE0WjdNWGJTeWZNOUZYanBiQVdZZUp1TmowVGpheGVBUDVFTmZ1OSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9hcGxpa2FzaS1rbGluaWsudGVzdC9sb2dpbiI7fXM6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczMzkwOTM4MTt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1733909382),
-('DTSUPccwakhtnMYF4lj1Xn0wUUaKIj5fM2OFm3o3', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiblFnbzJMcmc4WjNFZXNpSFJXWnRMQkdNMkEzWFVVc2pnVFBFT2dNMiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjg3OiJodHRwOi8vYXBsaWthc2kta2xpbmlrLnRlc3QvbGFwb3Jhbi1wYXNpZW4/amVuaXNfa2VsYW1pbj0mdGFuZ2dhbF9ha2hpcj0mdGFuZ2dhbF9tdWxhaT0iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczMzkzMDQyNDt9fQ==', 1733930449),
-('lmcXwToXyAHkyO7t3LmUZi9Tp3GNzRTGDfKPkS57', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiOTV5aGtvRHNxMm1tOVl4Ylk0eTRTWHZLZGdLbFRXUjdVemdsYk41byI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9hcGxpa2FzaS1rbGluaWsudGVzdC9sb2dpbiI7fXM6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczMzkwOTM4MTt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1733909382),
-('UnuzpCINj74jKbKwGuIagNUuanIvS4is86HIiaJ9', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicVBIYlZvQXlDOEdjdDkxTzA5ZWpMZ3BReGtPYXVDN0JKZXFDbmhxRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDk6Imh0dHA6Ly9hcGxpa2FzaS1rbGluaWsudGVzdC9sYXBvcmFuLWRhZnRhci9jcmVhdGUiO31zOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE3MzM5MDk4MzQ7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1733910201);
+('LN9zf6J5Rm7xkFLy9azWoYFjiQvD49aZMKTcD239', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiUExLbDlGc2lTdmY0enNSa0JNNk5nd0R4eVRoTVlDU05ITUtoYUtqRiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vYXBsaWthc2kta2xpbmlrLnRlc3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczMzk3NDc1MDt9fQ==', 1733975525),
+('Syk9Qx8lDRLLDmFEYy7Kvg9htLaGL3x0wDHCF3ZK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoieUV2YzBGT3owNFZ2WDZpcUFKT2h4elJDS3ZzZjRxNGtWMDluc0RpdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9hcGxpa2FzaS1rbGluaWsudGVzdC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczNDAwNTY2MTt9fQ==', 1734006220),
+('vtjqC5F0plxlp9JaDAx396BHpZZZOHiSyI8T9NRx', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoia1l5RkhpTkpkVWtyY2p3NGk2NGc4RDJoSkk5cTJjWDZORmYybWJRNCI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjM3OiJodHRwOi8vYXBsaWthc2kta2xpbmlrLnRlc3QvZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo0OiJhdXRoIjthOjE6e3M6MjE6InBhc3N3b3JkX2NvbmZpcm1lZF9hdCI7aToxNzMzOTg5ODM1O31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1733989838);
 
 -- --------------------------------------------------------
 
@@ -468,7 +467,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'M. Irfandi Atarza', 'lobuoku@gmail.com', NULL, '$2y$12$sbWtBd/GIrhxphQ7TRmGVOM4Bi8xHhb0kHFg4HaOTTsv2Ob6i.jQa', 'admin', 'npJ161dbId35mZRHxKixftPxUtZAvWHmQzp0MiVahq4s7VtgDjgASxcdtubY', '2024-11-19 15:34:28', '2024-11-19 15:34:28'),
+(1, 'M. Irfandi Atarza', 'lobuoku@gmail.com', NULL, '$2y$12$sbWtBd/GIrhxphQ7TRmGVOM4Bi8xHhb0kHFg4HaOTTsv2Ob6i.jQa', 'admin', 'ZN9Z56eNBJ3s7D2TnvN9TxkowGW9dx8e4YOQSI1hnHgoWk7vxwKEBeH7jITX', '2024-11-19 15:34:28', '2024-11-19 15:34:28'),
 (2, 'M. Irfandi Atarza', 'akunoperasinal@gmail.com', NULL, '$2y$12$KlkyhRyav5Rqr1dE8Gh7PefBb54P6KqRXyrKWk/Tj3gCgAIfVJuyq', 'user', NULL, '2024-11-26 14:49:36', '2024-11-26 14:49:36'),
 (3, 'Ahmad Sanusi', 'asdasa@mail.com', NULL, '$2y$12$k8DaV4JJ/wIhCAOeKLHFme5ws5P8TfmOkPs7V8Ie6pW/iURVvnSjW', 'user', NULL, '2024-11-28 13:54:41', '2024-11-28 14:24:27');
 
@@ -561,7 +560,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `daftars`
 --
 ALTER TABLE `daftars`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -585,7 +584,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pasiens`
 --
 ALTER TABLE `pasiens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `polis`

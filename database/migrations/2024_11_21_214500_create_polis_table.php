@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('polis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('biaya');
             $table->string('keterangan')->nullable();
             $table->timestamps();
         });

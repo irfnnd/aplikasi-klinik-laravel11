@@ -46,6 +46,7 @@
                     <span class="text-danger">{{ $errors->first('keluhan') }}</span>
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan Pendaftaran</button>
+                <a href="/daftar" class="btn btn-secondary">Kembali</a>
             </form>
         </div>
     </div>

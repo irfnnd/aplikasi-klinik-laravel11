@@ -28,7 +28,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
+                                    <th>No</th>
                                     <th>Tanggal Daftar</th>
                                     <th>Keluhan</th>
                                     <th>diagnosis</th>

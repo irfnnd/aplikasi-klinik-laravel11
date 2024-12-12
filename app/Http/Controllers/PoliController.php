@@ -33,7 +33,6 @@ class PoliController extends Controller
     {
         $requestData = $request->validate([
             'nama' => 'required',
-            'biaya' => 'required|numeric',
             'keterangan' => 'nullable',
         ]);
 
@@ -75,7 +74,6 @@ class PoliController extends Controller
     {
         $requestData = $request->validate([
             'nama' => 'required',
-            'biaya' => 'required|numeric',
         ]);
 
         // Buat instance model

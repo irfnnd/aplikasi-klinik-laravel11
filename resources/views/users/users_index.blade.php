@@ -8,7 +8,7 @@
         <!-- Tombol Tambah Data -->
         <div class="row mb-3">
             <div class="col-md-6">
-                <a href="/poli/create" class="btn btn-primary">Tambah Data <i class=" ti ti-plus fs-4"></i></a>
+                <a href="/users/create" class="btn btn-primary">Tambah Data <i class=" ti ti-plus fs-4"></i></a>
             </div>
         </div>
 

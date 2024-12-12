@@ -44,15 +44,15 @@
 
     <!-- Kop Surat -->
     <div class="kop-surat">
-        <h2>Klinik Permata</h2>
-        <h3>Laporan Data Pasien</h3>
-        <p>Alamat: Jl. Contoh Alamat, Kota, Provinsi</p>
-        <p>Telepon: 123-456-789 | Email: info@klinik.com</p>
+        <h2>Klinik Permata Ibu</h2>
+        <h3>Laporan Data Pendaftaran Pasien</h3>
+        <p>Alamat: Jl. Raya Air Dingin, Koto Tangah, Kota Padang</p>
+        <p>Telepon: 0813-7217-1278 | Email: klinikpermataibu@gmail.com</p>
         <hr>
     </div>
 
     <!-- Judul Laporan -->
-    <h4 style="text-align: center; margin-bottom: 20px;">Laporan Daftar Pasien</h4>
+    <h4 style="text-align: center; margin-bottom: 20px;">Laporan Data Pendaftaran Pasien</h4>
     <p style="color:#000; margin-bottom: 20px;">Tanggal : {{$tanggal ?? '-'}}  s/d  {{$tanggal ?? '-'}}</p>
 
     <!-- Tabel Data Pasien -->

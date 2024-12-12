@@ -19,7 +19,7 @@
                     <tr>
                         <th style="width: 5%;">No.</th>
                         <th style="width: 30%;">Nama Poli</th>
-                        <th style="width: 20%;">Biaya</th>
+                        {{-- <th style="width: 20%;">Biaya</th> --}}
                         <th style="width: 35%;">Keterangan</th>
                         <th style="width: 10%;">Aksi</th>
                     </tr>
@@ -29,7 +29,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->nama }}</td>
-                            <td>Rp {{ number_format($item->biaya, 0, ',', '.') }}</td>
+                            {{-- <td>Rp {{ number_format($item->biaya, 0, ',', '.') }}</td> --}}
                             <td>{{ $item->keterangan ?? '-' }}</td>
                             <td>
                                 <div class="d-flex">

@@ -44,10 +44,10 @@
 
     <!-- Kop Surat -->
     <div class="kop-surat">
-        <h2>Klinik Permata</h2>
+        <h2>Klinik Permata Ibu</h2>
         <h3>Laporan Data Pasien</h3>
-        <p>Alamat: Jl. Contoh Alamat, Kota, Provinsi</p>
-        <p>Telepon: 123-456-789 | Email: info@klinik.com</p>
+        <p>Alamat: Jl. Raya Air Dingin, Koto Tangah, Kota Padang</p>
+        <p>Telepon: 0813-7217-1278 | Email: klinikpermataibu@gmail.com</p>
         <hr>
     </div>
 

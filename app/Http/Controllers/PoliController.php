@@ -74,6 +74,7 @@ class PoliController extends Controller
     {
         $requestData = $request->validate([
             'nama' => 'required',
+            'keterangan' => 'nullable',
         ]);
 
         // Buat instance model

@@ -34,7 +34,7 @@
                             <td>
                                 <div class="d-flex">
                                     <a href="/users/{{ $item->id }}/edit" class="btn btn-sm btn-warning me-2">Edit</a>
-                                    <form action="/poli/{{ $item->id }}" method="POST" class="d-inline">
+                                    <form action="/users/{{ $item->id }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">

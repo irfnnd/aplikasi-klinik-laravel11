@@ -34,7 +34,7 @@
                         <option value="">-- Pilih Poli --</option>
                         @foreach ($listPoli as $item)
                             <option value="{{ $item->id }}" @selected(old('poli_id') == $item->id)>
-                                {{ $item->nama }} - Rp {{ number_format($item->biaya, 0, ',', '.') }}
+                                {{ $item->nama }}
                             </option>
                         @endforeach
                     </select>
